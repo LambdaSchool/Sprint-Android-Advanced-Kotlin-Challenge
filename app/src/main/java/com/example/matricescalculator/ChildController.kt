@@ -1,56 +1,49 @@
 package com.example.matricescalculator
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.core.graphics.rotationMatrix
 import com.bluelinelabs.conductor.Controller
-import com.bluelinelabs.conductor.ControllerChangeHandler
-import com.bluelinelabs.conductor.ControllerChangeType
-import com.example.matricescalculator.MatrixFunctions.matrixMultiplication
-import com.example.matricescalculator.MatrixFunctions.multiply
-import kotlin.random.Random
-
-class ChildController <T>(): BaseController()
-    where T: Controller, T: ChildController.ChildContainer{
+import kotlinx.android.synthetic.main.child_controller.view.*
 
 
+class ChildController: Controller {
 
-    constructor(targetController: T): this(){
-        setTargetController(targetController)
-    }
+    constructor() : super()
 
-    interface ChildContainer{
-        fun receiveResult(int: Int): Int {
-            val mmatrix = multiply(arrayOf(arrayOf(1,2,3)), arrayOf(arrayOf(4,5,6))).toString().toInt()
-            return mmatrix
+    constructor(args: Bundle?) : super(args){
 
-
-        }
+        args?.getStringArrayList(MainActivity.BUNDLE_KEY)
 
     }
+
+
 
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        return inflater.inflate(R.layout.activity_main, container, false)
-    }
-    override fun onChangeEnded(
-        changeHandler: ControllerChangeHandler,
-        changeType: ControllerChangeType
-    ) {
-        super.onChangeEnded(changeHandler, changeType)
-        val next = view?.findViewById<Button>(R.id.matrix)
-        val result = view?.findViewById<TextView>(R.id.textView)
 
-        next?.setText("MATRIX IT")
-        next?.setOnClickListener {
+        val view = inflater.inflate(R.layout.child_controller, container, false)
 
-            //todo 14
-            (targetController as ChildContainer).receiveResult(Random.nextInt())
-        }
+        val list = args.getStringArrayList(MainActivity.BUNDLE_KEY)
+
+
+
+
+
+        view.child_et_top_left_top.setText(list?.get(0))
+
+        view.child_et_top_right_top.setText(list?.get(1))
+
+        view.child_et_top_left_bottom.setText(list?.get(2))
+
+        view.child_et_top_right_bottom.setText(list?.get(3))
+
+
+
+
+
+        return view
 
     }
 

@@ -13,6 +13,12 @@ import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+
+        val BUNDLE_KEY = "key"
+
+    }
+
     private lateinit var router: Router
 
     private val container: ViewGroup by lazy {
