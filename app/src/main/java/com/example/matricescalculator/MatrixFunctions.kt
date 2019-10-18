@@ -1,6 +1,5 @@
 package com.example.matricescalculator
 
-import java.io.Serializable
 
 class MatrixFunctions{
 
@@ -38,13 +37,13 @@ class MatrixFunctions{
 
         for ( array in matrix ) {
 
-            println( array.joinToString { x -> x.toString() + " " })
+            println( array.joinToString { x -> "$x " })
         }
     }
 
     private fun multiply( ma: Array<Array<Int>>, mb: Array<Array<Int>> ): Array<Array<Int>> {
 
-        val result = Array(ma.size, { Array(mb[0].size, {0} ) })
+        val result = Array(ma.size) { Array(mb[0].size) {0} }
 
         for ( i in result.indices)
 
