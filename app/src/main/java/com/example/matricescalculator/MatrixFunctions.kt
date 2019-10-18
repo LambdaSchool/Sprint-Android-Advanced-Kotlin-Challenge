@@ -1,7 +1,7 @@
 package com.example.matricescalculator
 
 
-class MatrixFunctions{
+object MatrixFunctions{
 
     fun matrixMultiplication() {
 
@@ -41,7 +41,9 @@ class MatrixFunctions{
         }
     }
 
-    private fun multiply( ma: Array<Array<Int>>, mb: Array<Array<Int>> ): Array<Array<Int>> {
+fun multiply( ma: Array<Array<Int>>, mb: Array<Array<Int>> ): Array<Array<Int>> {
+
+
 
         val result = Array(ma.size) { Array(mb[0].size) {0} }
 
@@ -54,6 +56,9 @@ class MatrixFunctions{
                     result[i][j] += ma[i][k] * mb[k][j]
 
         return result
+
     }
+
+
 
 }
