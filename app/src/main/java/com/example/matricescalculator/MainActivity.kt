@@ -39,8 +39,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
     override fun onBackPressed() {
-        if (!router.handleBack()) {
-            super.onBackPressed()
-        }
-    }
+        //if (!router.handleBack()) {
+     //       super.onBackPressed()
+     //   }
+        //
+        router.popCurrentController()
+
+         }
 }
