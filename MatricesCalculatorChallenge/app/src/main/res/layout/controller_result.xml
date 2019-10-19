@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/controller_result_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <TextView
+        android:layout_margin="16dp"
+       android:textAlignment="center"
+        android:id="@+id/tv_row1_column1_cr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Place Holder"
+        app:layout_constraintEnd_toStartOf="@+id/tv_row1_column2_cr"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:id="@+id/tv_row1_column2_cr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Place Holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_row1_column1_cr"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:id="@+id/tv_row2_column1_cr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Place Holder"
+        app:layout_constraintEnd_toStartOf="@+id/tv_row2_column2_cr"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_row1_column1_cr" />
+
+    <TextView
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:id="@+id/tv_row2_column2_cr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Place Holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_row2_column1_cr"
+        app:layout_constraintTop_toBottomOf="@+id/tv_row1_column2_cr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
