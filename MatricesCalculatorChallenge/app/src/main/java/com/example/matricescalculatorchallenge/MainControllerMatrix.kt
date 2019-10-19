@@ -28,6 +28,16 @@ class MainControllerMatrix : Controller() {
 
     ) {
 
+        //Attaching views
+        val etM1R1C1 = view?.findViewById<EditText>(R.id.et_r1_c1)
+        val etM1R1C2 = view?.findViewById<EditText>(R.id.et_r1_c2)
+        val etM1R2C1 = view?.findViewById<EditText>(R.id.et_r2_c1)
+        val etM1R2C2 = view?.findViewById<EditText>(R.id.et_r2_c2)
+
+        val etM2R1C1 = view?.findViewById<EditText>(R.id.et_bottom_r1_c1)
+        val etM2R1C2 = view?.findViewById<EditText>(R.id.et_bottom_r1_c2)
+        val etM2R2C1 = view?.findViewById<EditText>(R.id.et_bottom_r2_c1)
+        val etM2R2C2 = view?.findViewById<EditText>(R.id.et_bottom_r2_c2)
 
        // matrixViews()
         super.onChangeEnded(changeHandler, changeType)
@@ -36,17 +46,10 @@ class MainControllerMatrix : Controller() {
         button?.setOnClickListener {
             //matrixViews()
 
+            //Bundle creation passes to ControllerResultMatrix
+
             val bundle = Bundle()
 
-            val etM1R1C1 = view?.findViewById<EditText>(R.id.et_r1_c1)
-            val etM1R1C2 = view?.findViewById<EditText>(R.id.et_r1_c2)
-            val etM1R2C1 = view?.findViewById<EditText>(R.id.et_r2_c1)
-            val etM1R2C2 = view?.findViewById<EditText>(R.id.et_r2_c2)
-
-            val etM2R1C1 = view?.findViewById<EditText>(R.id.et_bottom_r1_c1)
-            val etM2R1C2 = view?.findViewById<EditText>(R.id.et_bottom_r1_c2)
-            val etM2R2C1 = view?.findViewById<EditText>(R.id.et_bottom_r2_c1)
-            val etM2R2C2 = view?.findViewById<EditText>(R.id.et_bottom_r2_c2)
 
 
             //There has to be a better way
@@ -61,8 +64,9 @@ class MainControllerMatrix : Controller() {
             val matrix2Row2Column1 = etM2R2C1?.text.toString()
             val matrix2Row2Column2 = etM2R2C2?.text.toString()
 
-            val matrixOne = Matrix(Array(2) { IntArray(2) { 0 } }, 2, 2)
-            val matrixTwo = Matrix(Array(2) { IntArray(2) { 0 } }, 2, 2)
+            //to change calculation change the ints
+            val matrixOne = Matrix(Array(2) { IntArray(2) { 2 } }, 2, 2)
+            val matrixTwo = Matrix(Array(2) { IntArray(2) { 2 } }, 2, 2)
 
             // I wish I could abstract all this away but honestly it is to late and my brain no work good
             matrixOne.myMatrix[0][0] = matrix1Row1Column1.toInt()

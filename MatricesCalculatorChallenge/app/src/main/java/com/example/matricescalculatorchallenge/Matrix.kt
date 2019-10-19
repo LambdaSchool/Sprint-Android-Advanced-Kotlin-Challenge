@@ -31,6 +31,7 @@ class Matrix(var myMatrix: Array<IntArray>, var matrixHeight: Int, var matrixWid
         val column2 = matrix.matrixWidth
 
         //iteration through the rows and columns then performs relevant calculations
+        //Confession, taken from https://www.programiz.com/kotlin-programming/examples/multiply-matrix
         val answers = Matrix(Array(row1){IntArray(column2)}, matrixHeight, matrix.matrixWidth)
         for (i in 0..row1 - 1){
             for (x in 0..column2-1){
