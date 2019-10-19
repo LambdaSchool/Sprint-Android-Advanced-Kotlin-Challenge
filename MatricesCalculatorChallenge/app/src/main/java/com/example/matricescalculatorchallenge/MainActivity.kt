@@ -2,7 +2,6 @@ package com.example.matricescalculatorchallenge
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
@@ -13,7 +12,7 @@ The goal of this application is to allow users to multiply matrices together and
 
 The requirements for this project are as follows:
 
-Create a custom ControllerMatrix class which will.
+Create a custom MainControllerMatrix class which will.
 Store matrixes in a 2-dimentional array
 This line Array(height) { Array(width) { 0 } } will declare an array of size height x width and fill it with 0s
 
@@ -33,7 +32,7 @@ If you use child controllers, be sure construct them with setPopsLastView(true) 
 Use by lazy and lateinit on class properties*/
 class MainActivity : AppCompatActivity() {
 
-
+//Conductor boilerplate
     lateinit var router: Router
     val container:ViewGroup by lazy {
         this.findViewById<ViewGroup>(R.id.activity_main_root)
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         router = Conductor.attachRouter(this, container, savedInstanceState)
         if (!router.hasRootController()){
-            router.setRoot(RouterTransaction.with(ControllerMatrix()))
+            router.setRoot(RouterTransaction.with(MainControllerMatrix()))
         }
     }
     override fun onBackPressed() {
